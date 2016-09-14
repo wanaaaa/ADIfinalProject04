@@ -34,7 +34,14 @@ As a user, I can save the item in FireBase.
 ## Project Pitch Slide
 https://docs.google.com/presentation/d/1RYFI9gokiEO59hTiijiTwXyDU3HAh4_wGqy2cMa4ftI/edit#slide=id.p
 
+## Wireframe
+![serach image](./image/hayWire1.png)
 
-## ProType
+## Proto Type
+The proto type was made to check if the WalMart API is work or not.
+
+The working protopye link is https://github.com/wanaaaa/proFinal00/tree/master/p000_ListView/MyApplication
+
+The search result is shown in List View. 
 ![serach image](./image/protoType.png)
 
