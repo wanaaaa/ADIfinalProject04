@@ -16,9 +16,16 @@ A user can saved the search result in shopping card. The shopping cart is save i
 So the user can access it with any smart phone or computer.
 
 The user can compare prices anywhere that it has cell phone signal.
+##Technologies used
+1. 4 APIes - Walmart, Ebay, BestBuy and Twitter
+2. OKhttp - connecting API
+3. FireBase - to save shopping cart
+4. Picasso - retriving image from server
+5. Recyclerview
+6. Gson - to capture json data
 
 ## Design Process
-when I desinged it, I focused on readibitly of data. This app has many data from 4 APIs.
+when I desinged it, I focused on readibiliy of data. This app has much data from 4 APIs.
 Most important things is to deliver the information effectively. If too many information in a singles
 activity, a user may be confused and would not like to read it. The twitts messages is placed in other
 screen to simplify the app. 
@@ -33,3 +40,4 @@ may not be emulated in Windows. However, project written in Windows works well i
 
 ## Unsolved problems
 I am moving code for twitter API from RecyclerView Aadapter to main. While scrolling the screen up and down, whenever a view apper in screen, any code in it is excuted. It is waste of API calling becuase most API has limitation of calling a day.
+
