@@ -1,2 +1,2 @@
 ## Screen Shot
-![serach image](./image/search.png=270x480)
+![serach image](./image/search.png)
