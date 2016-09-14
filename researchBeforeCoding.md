@@ -35,7 +35,7 @@ As a user, I can save the item in FireBase.
 https://docs.google.com/presentation/d/1RYFI9gokiEO59hTiijiTwXyDU3HAh4_wGqy2cMa4ftI/edit#slide=id.p
 
 ## Wireframe
-![serach image](./image/hayWire1.png)
+![serach image](./image/hayWire1.jpg)
 
 ## Proto Type
 The proto type was made to check if the WalMart API is work or not.
