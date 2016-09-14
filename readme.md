@@ -1,3 +1,6 @@
+## The google play link is 
+https://play.google.com/apps/testing/com.wan.ubun17.purchasedecision
+
 ## Screen Shot
 ![serach image](./image/search_resize1.png)
 ![serach image](./image/twitt_resize.png)
@@ -24,4 +27,9 @@ There are numberless android phones which have various screen size. The small sc
 all information which can be showed in screen. The font size should be carfully chosed. Or we can 
 ajdust the amount of information in a screen according to screen size.
 
+## Special Instruction for Android Studdio
+The file structure of windows is different from linux and os x. Android project written in linux or os x
+may not be emulated in Windows. However, project written in Windows works well in both linux and os x. And linux and mac are compatible each other for android emulator.
+
 ## Unsolved problems
+I am moving code for twitter API from RecyclerView Aadapter to main. While scrolling the screen up and down, whenever a view apper in screen, any code in it is excuted. It is waste of API calling becuase most API has limitation of calling a day.
