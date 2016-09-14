@@ -1,7 +1,10 @@
 ## User Stroies
 As a user, I can search item in WalMart.
+
 As a user, I can see the result of ebay, best buy search by this app.
+
 AS a user, I can can search twitter.
+
 As a user, I can save the item in FireBase.
 
 ## Survery
