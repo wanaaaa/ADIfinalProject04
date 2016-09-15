@@ -11,8 +11,10 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 
 import com.wan.ubun17.purchasedecision.APIcall.BestBuyAPI;
 import com.wan.ubun17.purchasedecision.APIcall.EbayAPI;
@@ -38,11 +40,29 @@ public class MainActivity extends AppCompatActivity {
     EditText inputItem;
     Button buItem, buTwittSearch, buToCart;
     private ProgressBar progressBar;
+    private Switch swTwitOrNot;
+    boolean switchOnOff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        swTwitOrNot = (Switch) findViewById(R.id.swtwittOrNot);
+        switchOnOff = false;
+        swTwitOrNot.setChecked(false);
+        swTwitOrNot.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    switchOnOff = true;
+                    Log.d("Switch" , String.valueOf(switchOnOff)+"))))))))))))))))))))))))))");
+                } else {
+                    switchOnOff = false;
+                    Log.d("Switch", String.valueOf(switchOnOff)+ "Off((((((((((((((((((((((((((((((((");
+                }
+            }
+        });
 
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setMax(10);
@@ -69,6 +89,10 @@ public class MainActivity extends AppCompatActivity {
         buItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                SingleWarSearch warSearch = getInstance();
+                warSearch.setSwTwitt(switchOnOff);
+
                 inputItem = (EditText) findViewById(R.id.inputSearch);
 
                 progressBar.setVisibility(View.VISIBLE);

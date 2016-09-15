@@ -33,10 +33,12 @@ public class AdapterRecyItem extends RecyclerView.Adapter<ViewHolderItemList> {
     String stEbayMin, stEbayMax, stEbayAev, stItemName, stWalPrice
             , stBestBuyPrice, stTwitNum;
     Context mContext;
+
     //private ProgressBar progressBar;
     DatabaseReference mFirebaseRootRef;
 
-    public AdapterRecyItem(ArrayList<Item> args, ArrayList<Example> examArr, Context context) {
+    public AdapterRecyItem(ArrayList<Item> args, ArrayList<Example> examArr
+            , Context context) {
         mItems = args;
         mEbayExample = examArr;
         mContext = context;
@@ -54,7 +56,6 @@ public class AdapterRecyItem extends RecyclerView.Adapter<ViewHolderItemList> {
 
     @Override
     public void onBindViewHolder(final ViewHolderItemList holder, final int position) {
-
         if (mEbayExample.get(position) != null) {
             int numItem = mEbayExample.get(position)
                     .getFindItemsByKeywordsResponse().get(0).getSearchResult().get(0)
@@ -119,12 +120,14 @@ public class AdapterRecyItem extends RecyclerView.Adapter<ViewHolderItemList> {
         Picasso.with(holder.imageThumb.getContext()).load(thumbURL).resize(100, 100)
                 .into(holder.imageThumb);
 
-        //if (stTwitNum == null) {
-            //stTwitNum = "Data coming";
+        SingleWarSearch warSearch2 = SingleWarSearch.getInstance();
+        ///////////////////////////////////////
+        if (warSearch2.getSWtwitt()) {
             TwitterAsyncCalling twittCalling = new TwitterAsyncCalling(holder);
             twittCalling.execute(stItemName);
-        //}
+        } else {
 
+        }
 
         View.OnClickListener buTwitter = new View.OnClickListener(){
             @Override
@@ -133,28 +136,35 @@ public class AdapterRecyItem extends RecyclerView.Adapter<ViewHolderItemList> {
 
                 ArrayList<Statuses> twittList = holder.twittList;
 
-                int twittSize = twittList.size();
-                if (twittSize == 0) {
-                    twittArrForListView.add("There is no twitt");
-                } else {
-                    for (int i = 0; i < twittSize; i ++) {
-                        twittArrForListView.add(twittList.get(i).getText());
+                if (twittList !=null) {
+                    int twittSize = twittList.size();
+                    if (twittSize == 0) {
+                        twittArrForListView.add("There is no twitt");
+                    } else {
+                        for (int i = 0; i < twittSize; i ++) {
+                            twittArrForListView.add(twittList.get(i).getText());
+                        }
                     }
+
+                    final CharSequence[] Twitts = twittArrForListView
+                            .toArray(new String[twittArrForListView.size()]);
+
+                    AlertDialog.Builder twittDialogBuilder = new AlertDialog.Builder(mContext);
+                    twittDialogBuilder.setTitle("Twitts");
+
+                    twittDialogBuilder.setItems(Twitts, new DialogInterface.OnClickListener(){
+                        public  void onClick(DialogInterface dialog, int item) {
+                            String anytext = "asdfasdfasf";
+                        }
+                    });
+                    AlertDialog twitDialogObject = twittDialogBuilder.create();
+                    twitDialogObject.show();
+                } else {
+                    Toast.makeText(mContext, "Turn of Twitt button", Toast.LENGTH_LONG).show();
+                    //holder.buTwitter.setVisibility(View.GONE);
+                    Log.d("no", "Tweet");
                 }
 
-                final CharSequence[] Twitts = twittArrForListView
-                        .toArray(new String[twittArrForListView.size()]);
-
-                AlertDialog.Builder twittDialogBuilder = new AlertDialog.Builder(mContext);
-                twittDialogBuilder.setTitle("Twitts");
-
-                twittDialogBuilder.setItems(Twitts, new DialogInterface.OnClickListener(){
-                    public  void onClick(DialogInterface dialog, int item) {
-                        String anytext = "asdfasdfasf";
-                    }
-                });
-                AlertDialog twitDialogObject = twittDialogBuilder.create();
-                twitDialogObject.show();
             }
         };
 
@@ -212,7 +222,14 @@ public class AdapterRecyItem extends RecyclerView.Adapter<ViewHolderItemList> {
         @Override
         protected void onPostExecute(ArrayList<Statuses> statuses) {
             stTwitNum = String.valueOf(statuses.size());
-            holder.buTwitter.setText("Twitt # :" + stTwitNum);
+            SingleWarSearch warSearch3 = SingleWarSearch.getInstance();
+            if (warSearch3.getSWtwitt()) {
+                holder.buTwitter.setVisibility(View.VISIBLE);
+                holder.buTwitter.setText("Twitt # :" + stTwitNum);
+            } else{
+                holder.buTwitter.setVisibility(View.GONE);
+            }
+
             holder.twittList = statuses;
         }
     }

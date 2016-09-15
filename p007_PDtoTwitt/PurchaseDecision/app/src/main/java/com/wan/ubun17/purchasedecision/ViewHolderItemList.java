@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.wan.ubun17.purchasedecision.ResponseObject.TwitterObject.Statuses;
@@ -19,6 +20,8 @@ public class ViewHolderItemList extends RecyclerView.ViewHolder {
     public ImageView imageThumb;
     public Button buTwitter, buToCart;
     public ArrayList<Statuses> twittList;
+    public Switch swTwitt;
+
 
     public ViewHolderItemList(View itemView) {
         super(itemView);
@@ -34,5 +37,7 @@ public class ViewHolderItemList extends RecyclerView.ViewHolder {
 
         buTwitter = (Button) itemView.findViewById(R.id.buTwitterRecycle);
         buToCart = (Button) itemView.findViewById(R.id.buSaveInCart);
+
+        swTwitt = (Switch) itemView.findViewById(R.id.swtwittOrNot);
     }
 }

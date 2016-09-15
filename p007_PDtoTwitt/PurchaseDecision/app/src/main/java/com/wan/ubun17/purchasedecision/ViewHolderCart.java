@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 /**
@@ -14,6 +15,8 @@ public class ViewHolderCart extends RecyclerView.ViewHolder {
     public ImageView ivThum;
     Button buItemDelete;
 
+    Switch swTwitt;
+
     public ViewHolderCart(View itemView) {
         super(itemView);
 
@@ -21,5 +24,7 @@ public class ViewHolderCart extends RecyclerView.ViewHolder {
         tvPrice = (TextView) itemView.findViewById(R.id.cartPrice);
         ivThum = (ImageView) itemView.findViewById(R.id.cartImage);
         buItemDelete = (Button) itemView.findViewById(R.id.buDelItemCart);
+
+        swTwitt = (Switch) itemView.findViewById(R.id.swtwittOrNot);
     }
 }

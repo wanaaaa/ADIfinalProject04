@@ -13,6 +13,7 @@ public class SingleWarSearch {
     private static ArrayList<Item> itemList;
     private static ArrayList<Example> ebayExampleList;
     private static ArrayList<String> bestBuyArr;
+    private boolean swTwitt = false;
 
     public static SingleWarSearch getInstance() {
         if (walSingleton == null) {
@@ -26,6 +27,7 @@ public class SingleWarSearch {
         itemList = itemArray;
         ebayExampleList = new ArrayList<Example>();
         bestBuyArr = new ArrayList<String>();
+        //swTwitt = true;
     }
 
     public void setQuery(String str) {
@@ -58,5 +60,13 @@ public class SingleWarSearch {
 
     public void clearBestBuyPriceArr() {
         bestBuyArr.clear();
+    }
+
+    public boolean getSWtwitt() {
+        return swTwitt;
+    }
+
+    public void setSwTwitt(boolean boo) {
+        swTwitt = boo;
     }
 }
