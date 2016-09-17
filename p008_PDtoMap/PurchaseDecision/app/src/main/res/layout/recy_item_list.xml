@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="200dp">
+    <TextView
+        android:id="@+id/tvItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="16dp"
+        android:text="title"
+        android:textSize="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imaThumb"
+        android:layout_toEndOf="@+id/imaThumb"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/imaThumb"
+        android:scaleType="fitXY"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:id="@+id/WalPriceText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WalMart Price: "
+        android:textSize="15dp"
+        android:layout_below="@+id/tvItemName"
+        android:layout_toRightOf="@+id/imaThumb"
+        android:layout_toEndOf="@+id/imaThumb"/>
+
+    <TextView
+        android:id="@+id/WalPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="$$$"
+        android:textSize="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/tvItemName"
+        android:layout_toRightOf="@+id/WalPriceText"
+        android:layout_toEndOf="@+id/WalPriceText"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ebay Price"
+        android:id="@+id/ebayPrice"
+        android:layout_below="@+id/WalPriceText"
+        android:layout_toRightOf="@+id/imaThumb"
+        android:layout_toEndOf="@+id/imaThumb"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="average; "
+        android:id="@+id/textView2"
+        android:layout_above="@+id/ebayMinPrice"
+        android:layout_toRightOf="@+id/ebayMinPrice"
+        android:layout_toEndOf="@+id/ebayMinPrice"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="average $$$"
+        android:id="@+id/ebayAverPrice"
+        android:layout_alignTop="@+id/textView2"
+        android:layout_toRightOf="@+id/ebayMaxText"
+        android:layout_toEndOf="@+id/ebayMaxText"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="min; "
+        android:id="@+id/ebayMinText"
+        android:layout_below="@+id/ebayPrice"
+        android:layout_toLeftOf="@+id/ebayMinPrice"
+        android:layout_toStartOf="@+id/ebayMinPrice"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="min $$$"
+        android:id="@+id/ebayMinPrice"
+        android:layout_below="@+id/ebayPrice"
+        android:layout_toRightOf="@+id/ebayPrice"
+        android:layout_toEndOf="@+id/ebayPrice"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="max :"
+        android:id="@+id/ebayMaxText"
+        android:layout_below="@+id/ebayAverPrice"
+        android:layout_toRightOf="@+id/WalPrice"
+        android:layout_toEndOf="@+id/WalPrice"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="max $$$"
+        android:id="@+id/ebayMaxPrice"
+        android:layout_below="@+id/ebayAverPrice"
+        android:layout_toRightOf="@+id/ebayMaxText"
+        android:layout_toEndOf="@+id/ebayMaxText"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Twitter"
+        android:id="@+id/buTwitterRecycle"
+        android:layout_below="@+id/imaThumb"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/imaThumb"
+        android:layout_alignEnd="@+id/imaThumb"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To shopping cart"
+        android:id="@+id/buSaveInCart"
+        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/ebayMaxText"
+        android:layout_alignStart="@+id/ebayMaxText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="BestBuy Price $ "
+        android:id="@+id/textView4"
+        android:layout_above="@+id/buTwitterRecycle"
+        android:layout_toRightOf="@+id/imaThumb"
+        android:layout_toEndOf="@+id/imaThumb" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Best Buy Price"
+        android:id="@+id/tvBestBuyPrice"
+        android:layout_above="@+id/buSaveInCart"
+        android:layout_toRightOf="@+id/ebayMinPrice"
+        android:layout_toEndOf="@+id/ebayMinPrice" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TwittMap"
+        android:id="@+id/buTwitMap"
+        android:layout_below="@+id/imaThumb"
+        android:layout_toRightOf="@+id/imaThumb"
+        android:layout_toEndOf="@+id/imaThumb" />
+
+</RelativeLayout>

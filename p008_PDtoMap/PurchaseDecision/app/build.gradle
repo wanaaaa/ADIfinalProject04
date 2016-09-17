@@ -35,6 +35,7 @@ dependencies {
     compile 'com.firebaseui:firebase-ui-database:0.5.1'
 
     compile 'org.glassfish:javax.annotation:10.0-b28'
+    compile 'com.google.android.gms:play-services-appindexing:9.4.0'
 }
 
 apply plugin: 'com.google.gms.google-services'

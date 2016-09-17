@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/cartImage"
+        android:scaleType="fitXY"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="itemName"
+        android:id="@+id/cartName"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/cartImage"
+        android:layout_toEndOf="@+id/cartImage"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:hint="Price"
+        android:id="@+id/cartPrice"
+        android:layout_below="@+id/cartName"
+        android:layout_toRightOf="@+id/textView3"
+        android:layout_toEndOf="@+id/textView3"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="$ "
+        android:id="@+id/textView3"
+        android:layout_alignBottom="@+id/cartPrice"
+        android:layout_toRightOf="@+id/cartImage"
+        android:layout_toEndOf="@+id/cartImage"/>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:id="@+id/buDelItemCart"
+        android:layout_below="@+id/cartPrice"
+        android:layout_toRightOf="@+id/cartImage"
+        android:layout_toEndOf="@+id/cartImage"/>
+
+
+</RelativeLayout>
